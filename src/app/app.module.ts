@@ -10,6 +10,7 @@ import { LoginComponent } from './general/login/login.component';
 import { RegisterComponent } from './general/register/register.component';
 import { AsideComponent } from './compartida/aside/aside.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './general/error/error.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegisterComponent,
     AsideComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
