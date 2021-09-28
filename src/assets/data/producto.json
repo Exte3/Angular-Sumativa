@@ -1,0 +1,36 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Dinosaur For Hire",
+      "descripcion": "Juego Run and Gun protagonizado por 3 feroces dinosaurios que mandaran a todos los ninjas de vuelta a la tumba",
+      "precio": 29990,
+      "imagen": "/assets/img/dinosaurs.jpg",
+      "stock": 8
+    },
+    {
+      "id": 2,
+      "nombre": "Dinosaur For Hire",
+      "descripcion": "Juego Run and Gun protagonizado por 3 feroces dinosaurios que mandaran a todos los ninjas de vuelta a la tumba",
+      "precio": 29990,
+      "imagen": "/assets/img/dinosaurs.jpg",
+      "stock": 8
+    },
+    {
+      "id": 3,
+      "nombre": "Dinosaur For Hire",
+      "descripcion": "Juego Run and Gun protagonizado por 3 feroces dinosaurios que mandaran a todos los ninjas de vuelta a la tumba",
+      "precio": 29990,
+      "imagen": "/assets/img/dinosaurs.jpg",
+      "stock": 8
+    },
+    {
+      "id": 4,
+      "nombre": "Dinosaur For Hire",
+      "descripcion": "Juego Run and Gun protagonizado por 3 feroces dinosaurios que mandaran a todos los ninjas de vuelta a la tumba",
+      "precio": 29990,
+      "imagen": "/assets/img/dinosaurs.jpg",
+      "stock": 8
+    }
+  ]
+}

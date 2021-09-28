@@ -32,15 +32,27 @@
           <a class="nav-link" [routerLink]="['/producto']">Sega</a>
         </li>
       </ul>
-      <form class="d-flex">
+      <form (submit)="buscar()" class="d-flex">
         <input
+          [(ngModel)]="Busqueda"
+          name="Busqueda"
           class="form-control me-2"
-          type="search"
-          placeholder="Search"
+          type="Busqueda"
+          placeholder="Escriba lo que busca"
           aria-label="Search"
         />
+        <button class="btn btn-outline-dark" type="submit">Buscar</button>
       </form>
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            [routerLink]="['/carrito']"
+          >
+            Carrito
+          </button>
+        </li>
         <li class="nav-item">
           <button
             type="button"

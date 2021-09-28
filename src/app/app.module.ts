@@ -11,6 +11,9 @@ import { RegisterComponent } from './general/register/register.component';
 import { AsideComponent } from './compartida/aside/aside.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './general/error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CarritoComponent } from './general/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,11 @@ import { ErrorComponent } from './general/error/error.component';
     RegisterComponent,
     AsideComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    CarritoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
