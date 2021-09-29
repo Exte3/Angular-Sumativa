@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/interfaces/producto.interface';
 import { ProductoService } from 'src/app/services/producto.service';
-import { CarritoComponent } from '../carrito/carrito.component';
 
 @Component({
   selector: 'app-card',
@@ -10,10 +9,5 @@ import { CarritoComponent } from '../carrito/carrito.component';
 })
 export class CardComponent implements OnInit {
   constructor(public productoService: ProductoService) {}
-  temporal: Producto = {};
   ngOnInit(): void {}
-
-  agregaralcarrito(): void {
-    //CarritoComponent.Carrito_Compra;
-  }
 }

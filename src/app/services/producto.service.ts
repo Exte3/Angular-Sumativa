@@ -6,7 +6,10 @@ import { Producto } from '../interfaces/producto.interface';
   providedIn: 'root',
 })
 export class ProductoService {
+  //temporal: Producto = {};
   productos: Producto[] = [];
+  Carrito_Compra: Producto[] = [];
+
   constructor(private http: HttpClient) {
     this.cargarProductos();
   }
@@ -15,5 +18,15 @@ export class ProductoService {
       this.productos = respuesta.productos;
       console.log(this.productos);
     });
+  }
+  agregaralcarrito(Producto: any): void {
+    //console.log('se esta metiendo a la función carrito');
+    this.Carrito_Compra.push(Producto);
+    //console.log(Producto);
+    console.log('Este es el contenido del carrito', this.Carrito_Compra);
+  }
+  onSave($event: Producto) {
+    console.log('Funciona event', $event);
+    console.log('Este es el contenido del carrito', this.Carrito_Compra);
   }
 }

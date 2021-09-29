@@ -34,7 +34,12 @@
                     >Cantidad disponible: <b>{{ item.stock }}</b></small
                   >
                 </p>
-                <button class="btn btn-info button-card">Comprar</button>
+                <button
+                  class="btn btn-info button-card"
+                  (click)="productoService.agregaralcarrito(item)"
+                >
+                  Comprar
+                </button>
               </div>
             </div>
             <br />

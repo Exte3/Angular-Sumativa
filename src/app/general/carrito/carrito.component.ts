@@ -7,7 +7,6 @@ import { Producto } from 'src/app/interfaces/producto.interface';
   styleUrls: ['./carrito.component.sass'],
 })
 export class CarritoComponent implements OnInit {
-  Carrito_Compra: Producto[] = [];
   constructor() {}
 
   ngOnInit(): void {}
