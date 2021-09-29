@@ -1,3 +1,4 @@
+<h1>Editar Producto ID: #{{ productoService.placeholder.id }}</h1>
 <div class="container p-4">
   <div class="card">
     <div class="row g-0">
@@ -34,13 +35,14 @@
 
           <button
             class="btn btn-info button-card"
-            (click)="
-              productoService.agregaralcarrito(productoService.placeholder)
-            "
+            (click)="actualizarProducto(productoService.placeholder)"
           >
             Modificar
           </button>
-          <button class="btn btn btn-danger" [routerLink]="['/detalle']">
+          <button
+            class="btn btn btn-danger"
+            (click)="eliminarProduct(productoService.placeholder.id)"
+          >
             Eliminar
           </button>
         </div>
