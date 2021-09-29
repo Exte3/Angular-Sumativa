@@ -6,6 +6,8 @@ import { CardComponent } from './general/card/card.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './general/error/error.component';
 import { CarritoComponent } from './general/carrito/carrito.component';
+import { DetalleComponent } from './general/detalle/detalle.component';
+import { ModificarproductoComponent } from './general/modificarproducto/modificarproducto.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'producto', component: CardComponent },
   { path: 'carrito', component: CarritoComponent },
+  { path: 'detalle', component: DetalleComponent },
+  { path: 'modificar', component: ModificarproductoComponent },
   { path: '**', component: ErrorComponent },
 ];
 

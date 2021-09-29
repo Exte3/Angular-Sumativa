@@ -14,6 +14,8 @@ import { ErrorComponent } from './general/error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './general/carrito/carrito.component';
+import { DetalleComponent } from './general/detalle/detalle.component';
+import { ModificarproductoComponent } from './general/modificarproducto/modificarproducto.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { CarritoComponent } from './general/carrito/carrito.component';
     HomeComponent,
     ErrorComponent,
     CarritoComponent,
+    DetalleComponent,
+    ModificarproductoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

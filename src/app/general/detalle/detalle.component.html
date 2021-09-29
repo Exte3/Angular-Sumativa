@@ -1,0 +1,51 @@
+<div class="container p-4">
+  <div class="card">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="{{ productoService.placeholder.imagen }}"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ productoService.placeholder.nombre }}</h5>
+          <p class="card-text">
+            {{ productoService.placeholder.descripcion }}
+          </p>
+          <p class="card-text">
+            <small class="text"
+              >Precio:
+              <b>
+                {{
+                  productoService.placeholder.precio
+                    | currency: "CLP":"symbol-narrow"
+                }}
+              </b></small
+            >
+          </p>
+          <p class="card-text">
+            <small class="text"
+              >Cantidad disponible:
+              <b>{{ productoService.placeholder.stock }}</b></small
+            >
+          </p>
+
+          <button
+            class="btn btn-info button-card"
+            (click)="
+              productoService.agregaralcarrito(productoService.placeholder)
+            "
+          >
+            Comprar
+          </button>
+          <button class="btn btn-info button-card" [routerLink]="['/detalle']">
+            Ver detalle
+          </button>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>

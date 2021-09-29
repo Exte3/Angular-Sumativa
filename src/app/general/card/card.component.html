@@ -1,48 +1,60 @@
-<div class="col-10-centered card card-products">
-  <div class="card-header">
-    <h4 class="text-center">Sega</h4>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div
-        class="col-md-4 col-xs-12 text-center"
-        style="max-width: 540px"
-        *ngFor="let item of productoService.productos"
-      >
-        <div class="card">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img
-                src="{{ item.imagen }}"
-                class="img-fluid rounded-start"
-                alt="..."
-              />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{ item.nombre }}</h5>
-                <p class="card-text">
-                  {{ item.descripcion }}
-                </p>
-                <p class="card-text">
-                  <small class="text"
-                    >Precio: <b>${{ item.precio }}</b></small
-                  >
-                </p>
-                <p class="card-text">
-                  <small class="text"
-                    >Cantidad disponible: <b>{{ item.stock }}</b></small
-                  >
-                </p>
-                <button
-                  class="btn btn-info button-card"
-                  (click)="productoService.agregaralcarrito(item)"
-                >
-                  Comprar
-                </button>
+<div class="container p-4">
+  <div class="col-10-centered card card-products">
+    <div class="card-header">
+      <h4 class="text-center">Sega</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div
+          class="col-md-4 col-xs-12 text-center"
+          style="max-width: 540px"
+          *ngFor="let item of productoService.productos"
+        >
+          <div class="card">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="{{ item.imagen }}"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
               </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.nombre }}</h5>
+                  <p class="card-text">
+                    {{ item.descripcion }}
+                  </p>
+                  <p class="card-text">
+                    <small class="text"
+                      >Precio:
+                      <b>
+                        {{ item.precio | currency: "CLP":"symbol-narrow" }}
+                      </b></small
+                    >
+                  </p>
+                  <p class="card-text">
+                    <small class="text"
+                      >Cantidad disponible: <b>{{ item.stock }}</b></small
+                    >
+                  </p>
+
+                  <button
+                    class="btn btn-info button-card"
+                    (click)="productoService.agregaralcarrito(item)"
+                  >
+                    Comprar
+                  </button>
+                  <button
+                    class="btn btn-info button-card"
+                    [routerLink]="['/detalle']"
+                  >
+                    Ver detalle
+                  </button>
+                </div>
+              </div>
+              <br />
             </div>
-            <br />
           </div>
         </div>
       </div>

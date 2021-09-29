@@ -1,1 +1,29 @@
-<p>carrito works!</p>
+<div class="container p-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo Producto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of productoService.Carrito_Compra">
+      <tr>
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.precio | currency: "CLP":"symbol-narrow" }}</td>
+        <td><button class="btn btn btn-danger">Eliminar</button></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Total:</th>
+        <td><button class="btn btn btn-primary">Comprar</button></td>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+  </table>
+</div>
