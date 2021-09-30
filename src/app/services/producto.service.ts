@@ -40,23 +40,26 @@ export class ProductoService {
     //console.log(Producto);
   }
   eliminar(id: any): void {
-    //dado que este elemento borra el elemento de la posición correspondiente al id
-    //no borra correctamente lo que uno desea
-    //por lo cual aun requiere ser arreglada
-    //así que solo se considera como una extructura base
     console.log('Eliminaremos el id: ', id);
+    let precio = 0;
     for (let i = 0; i < this.Carrito_Compra.length; i++) {
       if (this.Carrito_Compra[i].id === id) {
+        //this.productos[id - 1].stock = this.productos[id].stock + 1;
         id = i;
+        precio = this.Carrito_Compra[i].precio;
+
         i = this.Carrito_Compra.length;
       }
     }
     let index = this.Carrito_Compra.indexOf(id);
     let idn: number = id;
+
     this.Carrito_Compra.splice(idn, 1);
+    this.subtotal = this.subtotal - precio;
     console.log(this.Carrito_Compra);
   }
   total() {
+    console.log('Se esta calculando el total');
     for (let i = 0; i < this.Carrito_Compra.length; i++) {
       if (this.Carrito_Compra[i].precio != undefined) {
         let tempasd: number = 0;

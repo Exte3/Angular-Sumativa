@@ -17,6 +17,7 @@ import { CarritoComponent } from './general/carrito/carrito.component';
 import { DetalleComponent } from './general/detalle/detalle.component';
 import { ModificarproductoComponent } from './general/modificarproducto/modificarproducto.component';
 import { PagoComponent } from './general/pago/pago.component';
+import { ResumenComponent } from './general/resumen/resumen.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PagoComponent } from './general/pago/pago.component';
     DetalleComponent,
     ModificarproductoComponent,
     PagoComponent,
+    ResumenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
