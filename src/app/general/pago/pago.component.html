@@ -1,0 +1,103 @@
+<div class="container p-4">
+  <!-- formulario de dirección-->
+  <form (ngSubmit)="confirmar()" class="col-md-6 form-register col-xs-12">
+    <h2>Dirección de envio</h2>
+
+    <div class="mb-3">
+      <label for="tipo_tarjeta" class="form-label">Tipo de Tarjeta : </label>
+      <input
+        [(ngModel)]="tipo_tarjeta"
+        name="tipo_tarjeta"
+        type="text"
+        class="form-control"
+        id="tipo_tarjeta"
+        aria-describedby="tipo_tarjeta"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="nombre_cliente_tarjeta" class="form-label"
+        >Nombre Cliente :
+      </label>
+      <input
+        [(ngModel)]="nombre_cliente_tarjeta"
+        name="nombre_cliente_tarjeta"
+        type="text"
+        class="form-control"
+        id="nombre_cliente_tarjeta"
+        aria-describedby="nombre_cliente_tarjeta"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="numero_tarjeta" class="form-label"
+        >Número de Tarjeta :
+      </label>
+      <input
+        [(ngModel)]="numero_tarjeta"
+        name="numero_tarjeta"
+        type="text"
+        class="form-control"
+        id="numero_tarjeta"
+        aria-describedby="numero_tarjeta"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="codigo_tarjeta" class="form-label"
+        >Codigo de Tarjeta :
+      </label>
+      <input
+        [(ngModel)]="codigo_tarjeta"
+        name="codigo_tarjeta"
+        type="text"
+        class="form-control"
+        id="codigo_tarjeta"
+        aria-describedby="codigo_tarjeta"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="mes_expiaracion_tarjeta" class="form-label"
+        >Més Expiración de Tarjeta :
+      </label>
+      <input
+        [(ngModel)]="mes_expiaracion_tarjeta"
+        name="mes_expiaracion_tarjeta"
+        type="text"
+        class="form-control"
+        id="mes_expiaracion_tarjeta"
+        aria-describedby="mes_expiaracion_tarjeta"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="ano_expiaracion_tarjeta" class="form-label"
+        >Año de expiración de Tarjeta:
+      </label>
+      <input
+        [(ngModel)]="ano_expiaracion_tarjeta"
+        name="ano_expiaracion_tarjeta"
+        type="ano_expiaracion_tarjeta"
+        class="form-control"
+        id="ano_expiaracion_tarjeta"
+        aria-describedby="ano_expiaracion_tarjeta"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="registrar">
+      Aceptar
+    </button>
+    <br />
+    <br />
+  </form>
+
+  <ul>
+    <li *ngFor="let err of errores; let i = index" class="text-danger">
+      {{ err }}
+    </li>
+  </ul>
+
+  <div class="alert alert-success" role="alert" *ngIf="registered">
+    Se han confirmado sus datos
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="errorRegister">
+    Ingrese sus datos correctamente
+  </div>
+</div>

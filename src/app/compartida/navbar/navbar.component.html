@@ -52,6 +52,7 @@
             type="button"
             class="btn btn-secondary"
             [routerLink]="['/carrito']"
+            (click)="productoService.total()"
           >
             Carrito
           </button>

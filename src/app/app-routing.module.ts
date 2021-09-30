@@ -8,6 +8,7 @@ import { ErrorComponent } from './general/error/error.component';
 import { CarritoComponent } from './general/carrito/carrito.component';
 import { DetalleComponent } from './general/detalle/detalle.component';
 import { ModificarproductoComponent } from './general/modificarproducto/modificarproducto.component';
+import { PagoComponent } from './general/pago/pago.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'detalle', component: DetalleComponent },
   { path: 'modificar', component: ModificarproductoComponent },
+  { path: 'pago', component: PagoComponent },
   { path: '**', component: ErrorComponent },
 ];
 

@@ -13,17 +13,148 @@
         <th scope="row">{{ item.id }}</th>
         <td>{{ item.nombre }}</td>
         <td>{{ item.precio | currency: "CLP":"symbol-narrow" }}</td>
-        <td><button class="btn btn btn-danger">Eliminar</button></td>
+        <td>
+          <button
+            class="btn btn btn-danger"
+            (click)="productoService.eliminar(item.id)"
+          >
+            Eliminar
+          </button>
+        </td>
       </tr>
     </tbody>
     <thead>
       <tr>
         <th scope="col"></th>
         <th scope="col"></th>
-        <th scope="col">Total:</th>
+        <th scope="col">
+          Total:
+          {{ productoService.subtotal | currency: "CLP":"symbol-narrow" }}
+        </th>
         <td><button class="btn btn btn-primary">Comprar</button></td>
         <th scope="col"></th>
       </tr>
     </thead>
   </table>
+  <!-- formulario de dirección-->
+  <form (ngSubmit)="confirmar()" class="col-md-6 form-register col-xs-12">
+    <h2>Dirección de envio</h2>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Nombre : </label>
+      <input
+        [(ngModel)]="nombre"
+        name="nombre"
+        type="text"
+        class="form-control"
+        id="nombre"
+        aria-describedby="nombre"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido : </label>
+      <input
+        [(ngModel)]="apellido"
+        name="apellido"
+        type="text"
+        class="form-control"
+        id="apellido"
+        aria-describedby="apellido"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="pais" class="form-label">País : </label>
+      <input
+        [(ngModel)]="pais"
+        name="apellido"
+        type="text"
+        class="form-control"
+        id="pais"
+        aria-describedby="pais"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="region" class="form-label">Región : </label>
+      <input
+        [(ngModel)]="region"
+        name="apellido"
+        type="text"
+        class="form-control"
+        id="region"
+        aria-describedby="region"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="ciudad" class="form-label">Ciudad : </label>
+      <input
+        [(ngModel)]="ciudad"
+        name="apellido"
+        type="text"
+        class="form-control"
+        id="ciudad"
+        aria-describedby="ciudad"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Calle y numero: </label>
+      <input
+        [(ngModel)]="direccion"
+        name="direccion"
+        type="direccion"
+        class="form-control"
+        id="direccion"
+        aria-describedby="direccion"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Departamento/Block/Casa: </label>
+      <input
+        [(ngModel)]="direccion2"
+        name="direccion2"
+        type="direccion2"
+        class="form-control"
+        id="direccion2"
+        aria-describedby="direccion2"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="postal" class="form-label">Código Postal : </label>
+      <input
+        [(ngModel)]="postal"
+        name="apellido"
+        type="text"
+        class="form-control"
+        id="postal"
+        aria-describedby="postal"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="registrar">
+      Aceptar
+    </button>
+    <br />
+    <br />
+  </form>
+
+  <ul>
+    <li *ngFor="let err of errores; let i = index" class="text-danger">
+      {{ err }}
+    </li>
+  </ul>
+
+  <div class="alert alert-success" role="alert" *ngIf="registered">
+    Se han confirmado sus datos
+    <button
+      type="submit"
+      class="btn btn-primary"
+      id="pagar"
+      [routerLink]="['/pago']"
+    >
+      Ir a pagar
+    </button>
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="errorRegister">
+    Ingrese sus datos correctamente
+  </div>
 </div>
